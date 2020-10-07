@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ProductCard from '../components/ProductCard'
-import CategoryCard from '../components/CategoryCard'
+// import CategoryCard from '../components/CategoryCard'
 import ProductView from '../components/ProductView'
 
 import { Row, Col } from 'antd'
 
 export class Home extends Component {
 
-    viewProduct = (e) => {
+    viewProduct = (e) => {s
 
     }
 
