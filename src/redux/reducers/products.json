@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "category": "women",
+        "name": "Espirit Ruffle Shirt",
+        "price": "16.64",
+        "image": "/images/product-01.jpg"
+    },
+    {
+        "id": 2,
+        "category": "women",
+        "name": "Herschel supply",
+        "price": "35.31",
+        "image": "/images/product-02.jpg"
+    },
+    {
+        "id": 3,
+        "category": "men",
+        "name": "Only Check Trouser",
+        "price": "25.50",
+        "image": "/images/product-03.jpg"
+    },
+    {
+        "id": 4,
+        "category": "women",
+        "name": "Classic Trench Coat",
+        "price": "75.00",
+        "image": "/images/product-04.jpg"
+    },
+    {
+        "id": 5,
+        "category": "women",
+        "name": "Front Pocket Jumper",
+        "price": "34.75",
+        "image": "/images/product-05.jpg"
+    },
+    {
+        "id": 6,
+        "category": "accessories",
+        "name": "Vintage Inspired Classic",
+        "price": "93.20",
+        "image": "/images/product-06.jpg"
+    },
+    {
+        "id": 7,
+        "category": "women",
+        "name": "Shirt in Stretch Cotton",
+        "price": "52.66",
+        "image": "/images/product-07.jpg"
+    },
+    {
+        "id": 8,
+        "category": "women",
+        "name": "Pieces Metallic Printed",
+        "price": "18.98",
+        "image": "/images/product-08.jpg"
+    },
+    {
+        "id": 9,
+        "category": "men",
+        "name": "Converse All Star Hi Plimsolls",
+        "price": "75.00",
+        "image": "/images/product-09.jpg"
+    },
+    {
+        "id": 10,
+        "category": "women",
+        "name": "Femme T-Shirt In Stripe",
+        "price": "25.85",
+        "image": "/images/product-10.jpg"
+    },
+    {
+        "id": 11,
+        "category": "men",
+        "name": "Herschel supply",
+        "price": "63.16",
+        "image": "/images/product-11.jpg"
+    },
+    {
+        "id": 12,
+        "category": "accessories",
+        "name": "Herschel supply",
+        "price": "63.15",
+        "image": "/images/product-12.jpg"
+    },
+    {
+        "id": 13,
+        "category": "women",
+        "name": "T-Shirt with Sleeve",
+        "price": "18.49",
+        "image": "/images/product-13.jpg"
+    },
+    {
+        "id": 14,
+        "category": "women",
+        "name": "Pretty Little Thing",
+        "price": "54.79",
+        "image": "/images/product-14.jpg"
+    },
+    {
+        "id": 15,
+        "category": "accessories",
+        "name": "Mini Silver Mesh Watch",
+        "price": "86.85",
+        "image": "/images/product-15.jpg"
+    },
+    {
+        "id": 16,
+        "category": "women",
+        "name": "Square Neck Back",
+        "price": "29.64",
+        "image": "/images/product-16.jpg"
+    }
+]
