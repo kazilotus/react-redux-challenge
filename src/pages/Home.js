@@ -8,7 +8,7 @@ import { Row, Col } from 'antd'
 
 export class Home extends Component {
 
-    viewProduct = (e) => {s
+    viewProduct = (e) => {
 
     }
 
