@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { Modal } from 'antd';
+import { Button, Modal, Space } from 'antd';
 import Counter from './Counter';
 
 export class ProductView extends Component {
 
     state = {
-        count: 0
+        count: 1
     }
 
     updateCount = (count) => {
@@ -44,7 +44,7 @@ export class ProductView extends Component {
                         line-height: 1.5;
                     }
 
-                    .product span {
+                    .product span.price {
                         font-size: 24px;
                         font-weight: 600;
                         line-height: 1.388888;
@@ -73,9 +73,12 @@ export class ProductView extends Component {
                         </div>
                         <div className="description">
                             <h4>{product.name}</h4>
-                            <span>${product.price}</span>
-                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.</p>
-                            <Counter value={ this.state.count } onChange={ this.updateCount } />
+                            <span className="price">${product.price}</span>
+                            <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+                            <Space>
+                                <Counter value={ this.state.count } onChange={ this.updateCount } />
+                                <Button size="large">Add to Cart</Button>
+                            </Space>
                         </div>
                     </div>
 
@@ -86,7 +89,7 @@ export class ProductView extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    selectedProduct: state.common?.product,
+    selectedProduct: 3 || state.common?.product,
     products: state.products
 })
 
