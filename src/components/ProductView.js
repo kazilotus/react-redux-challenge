@@ -4,6 +4,11 @@ import { connect } from 'react-redux'
 import { Button, Modal, Space } from 'antd';
 import Counter from './Counter';
 
+import { hideProduct } from '../redux/actions/common'
+import { updateToCart } from '../redux/actions/cart'
+
+import './ProductView.css'
+
 export class ProductView extends Component {
 
     state = {
@@ -16,6 +21,11 @@ export class ProductView extends Component {
         })
     }
 
+    onCancel = () => {
+        this.updateCount(1)
+        this.props.hideProduct()
+    }
+
     render() {
 
         const product = this.props.products.find(p => p.id === this.props.selectedProduct)
@@ -23,45 +33,9 @@ export class ProductView extends Component {
         return (
             <React.Fragment>
 
-                <style jsx>{`
-
-                    .product {
-                        font-family: 'Source Sans Pro', sans-serif;
-                        padding: 50px;
-                    }
-
-                    .product img {
-                        width: 100%;
-                    }
-
-                    .product .description {
-                        width: 100%;
-                        margin-left: 60px;
-                    }
-
-                    .product h4 {
-                        font-size: 24px;
-                        line-height: 1.5;
-                    }
-
-                    .product span.price {
-                        font-size: 24px;
-                        font-weight: 600;
-                        line-height: 1.388888;
-                        color: #333;
-                    }
-
-                    .product p {
-                        font-size: 14px;
-                        line-height: 1.7;
-                        color: #666;
-                        margin-top: 20px;
-                    }
-
-                `}</style>
-
-                { product && <Modal
+                <Modal
                     visible={this.props.selectedProduct}
+                    onCancel={this.onCancel}
                     closable={true}
                     width={1000}
                     footer={null}
@@ -69,32 +43,32 @@ export class ProductView extends Component {
                     
                     <div className="product fr">
                         <div className="image">
-                            <img src={product.image} alt="product preview"/>
+                            <img src={product?.image} alt="product preview"/>
                         </div>
                         <div className="description">
-                            <h4>{product.name}</h4>
-                            <span className="price">${product.price}</span>
+                            <h4>{product?.name}</h4>
+                            <span className="price">${product?.price}</span>
                             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
                             <Space>
                                 <Counter value={ this.state.count } onChange={ this.updateCount } />
-                                <Button size="large">Add to Cart</Button>
+                                <Button size="large" onClick={ () => { this.props.add(product?.id, this.state.count); this.onCancel() } }>Add to Cart</Button>
                             </Space>
                         </div>
                     </div>
-
-                </Modal> }
+                </Modal>
             </React.Fragment>
         )
     }
 }
 
 const mapStateToProps = (state) => ({
-    selectedProduct: 3 || state.common?.product,
+    selectedProduct: state.common?.product,
     products: state.products
 })
 
-const mapDispatchToProps = {
-    
-}
+const mapDispatchToProps = dispatch => ({
+    hideProduct: () => dispatch(hideProduct()),
+    add: (id, quantity) => dispatch(updateToCart(id, quantity))
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductView)

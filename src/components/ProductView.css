@@ -1,0 +1,43 @@
+.product {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 50px;
+}
+
+.product img {
+    width: 100%;
+}
+
+.product .description {
+    width: 100%;
+    margin-left: 60px;
+}
+
+.product h4 {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.product span.price {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.388888;
+    color: #333;
+}
+
+.product p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .product.fr {
+        flex-direction: column!important;
+    }
+    .product .description {
+        width: 100%;
+        margin-top: 15px;
+        margin-left: 0px;
+    }
+}

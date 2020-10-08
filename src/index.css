@@ -39,3 +39,7 @@ code {
 .ma {
   margin: auto;
 }
+
+.full-height, .fh {
+  height: 100%;
+}

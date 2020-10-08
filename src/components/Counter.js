@@ -23,9 +23,16 @@ export default class Counter extends Component {
         })
     }
 
+    componentWillReceiveProps(nextProps) {
+        console.log('componentWillReceiveProps', nextProps);
+        if (this.props?.value !== nextProps.value) {
+            this.setState({ count: nextProps.value });
+        }
+    }
+
     render() {
         return (
-            <div className="counter fr">
+            <div className="counter fr" style={{ transform: `scale(${this.props.scale || 1})` }}>
                 
                 <style jsx>{`
 
