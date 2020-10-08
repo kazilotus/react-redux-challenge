@@ -26,7 +26,10 @@ class CartView extends Component {
                     width={380}
                 >
                     <div id="cart" className="fh">
-                        <h2 className="cart-title">Your Cart</h2>
+                        <div className="fr">
+                            <h2 className="cart-title fg">Your Cart</h2>
+                            <h2 className="cart-close" onClick={ this.props.hide }><CloseOutlined /></h2>
+                        </div>
                         <div className="cart-content fc">
 
                             { total ? 
