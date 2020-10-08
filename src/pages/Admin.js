@@ -57,7 +57,7 @@ export class Admin extends Component {
             title: 'Action',
             key: 'action',
             fixed: 'right',
-            width: 52,
+            width: 67,
             render: (text, record) => (
               <ButtonGroup>
                   <Button onClick={() => this.props.approve(record.id)}>
