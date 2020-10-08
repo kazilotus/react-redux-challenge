@@ -24,7 +24,7 @@ export class Admin extends Component {
           title: 'Name',
           dataIndex: 'name',
           key: 'name',
-        render: (name, record) => <a onClick={() => this.props.showProduct(record.id)}>{name}</a>
+        render: (name, record) => <a href="##" onClick={() => this.props.showProduct(record.id)}>{name}</a>
         },
         {
           title: 'Price',
