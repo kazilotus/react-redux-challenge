@@ -1,17 +1,17 @@
 import { combineReducers } from 'redux';
 
+import auth from './auth';
 import cart from './cart';
 import common from './common';
 import categories from './categories';
 import products from './products';
-import users from './users';
 
 const reducers = combineReducers({
+  auth,
   cart,
   common,
   categories,
-  products,
-  users
+  products
 });
 
 export default reducers;

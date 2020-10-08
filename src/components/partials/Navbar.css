@@ -1,0 +1,33 @@
+nav {
+    height: auto;
+}
+
+nav .nav-item {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.8);
+    margin: auto 15px;
+    text-align: 'center';
+}
+
+nav .nav-item:last-child {
+    margin-right: 0;
+}
+
+nav .nav-item:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    line-height: 2rem;
+}
+
+#logo span {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.8)!important
+}
+
+#logo a {
+    color: rgba(0, 0, 0, 0.8)!important
+}

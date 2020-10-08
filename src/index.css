@@ -43,3 +43,8 @@ code {
 .full-height, .fh {
   height: 100%;
 }
+
+section {
+  max-width: 1600px;
+  margin: auto;
+}

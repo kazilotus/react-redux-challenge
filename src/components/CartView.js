@@ -14,9 +14,7 @@ class CartView extends Component {
     render() {
 
         const { items } = this.props
-
         const total = !!items.length && items.reduce((sum, item) => sum + (item.price * item.quantity), 0)
-        console.log(total)
 
         return (
             <div>

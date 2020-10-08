@@ -3,9 +3,15 @@ import { Switch, Route } from 'react-router-dom'
 
 import Navbar from './components/partials/Navbar'
 
+import Routes from './routes/Routes'
+
 import Home from './pages/Home';
 import Login from './pages/Login';
 import FourOFour from './pages/FourOFour';
+
+
+import CartView from './components/CartView';
+import ProductView from './components/ProductView';
 
 import 'antd/dist/antd.css'
 
@@ -21,10 +27,11 @@ function App() {
 
       <Navbar/>
 
+      <CartView/>
+      <ProductView/>
+
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route path="" component={FourOFour} />
+        <Route component={Routes} />
       </Switch>
 
     </div>

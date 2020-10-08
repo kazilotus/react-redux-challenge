@@ -4,35 +4,15 @@ import { connect } from 'react-redux'
 import ProductCard from '../components/ProductCard'
 // import CategoryCard from '../components/CategoryCard'
 
-import CartView from '../components/CartView';
-import ProductView from '../components/ProductView';
-
 import { Row, Col } from 'antd'
+
+import './Home.css'
 
 export class Home extends Component {
 
     render() {
         return (
             <div>
-
-                <CartView/>
-                <ProductView/>
-                
-                <style jsx>{`
-                    .landing {
-                        min-height: 80px;
-                    }
-
-                    .masthead {
-                        background: url("");
-                    }
-
-                    section {
-                        max-width: 1600px;
-                        margin: auto;
-                    }
-
-                `}</style>
 
                 <div className="landing">
                     <div className="masthead">

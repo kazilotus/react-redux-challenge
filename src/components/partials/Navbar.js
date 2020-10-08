@@ -1,47 +1,28 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { showCart } from '../../redux/actions/cart'
+import { logout } from '../../redux/actions/auth'
+
+import './Navbar.css'
 
 class Navbar extends Component {
     render() {
         return (
             <React.Fragment>
-                <style jsx>{`
-
-                    nav {
-                        height: auto;
-                    }
-
-                    nav .nav-item {
-                        margin: auto 15px;
-                    }
-                    nav .nav-item:last-child {
-                        margin-right: 0;
-                    }
-
-                    #logo {
-                        font-family: 'Playfair Display', serif;
-                        font-size: 2.5rem;
-                        line-height: 2rem;
-                    }
-                    #logo span {
-                        font-weight: 500;
-                    }
-
-                    .nav-item {
-                        cursor: pointer;
-                    }
-
-                `}</style>
-
                 <nav className="fr">
                     <div id="logo" className="fg">
-                        <span>Amari</span> store
+                        <Link to="/"><span>Amari</span> store</Link>
                     </div>
                     <div className="fr ma">
-                        <div className="nav-item" onClick={ () => { this.props.cart() } }>Cart</div>
-                        <div className="nav-item">Login</div>
+                        <div className="nav-item" onClick={ () => this.props.cart() }>Cart</div>
+                        { this.props?.user ? 
+                        <React.Fragment>
+                            <Link to="/admin" className="nav-item">Admin Panel</Link>
+                            <div className="nav-item" onClick={ () => this.props.logout() }>Logout</div>
+                        </React.Fragment>
+                        : <Link to="/login" className="nav-item">Login</Link> }
                     </div>
                 </nav>
             </React.Fragment>
@@ -50,11 +31,12 @@ class Navbar extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    
+    user: state.auth?.user
 })
 
 const mapDispatchToProps = dispatch => ({
-    cart: () => dispatch(showCart())
+    cart: () => dispatch(showCart()),
+    logout: () => dispatch(logout())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
