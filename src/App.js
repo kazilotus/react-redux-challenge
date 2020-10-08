@@ -1,10 +1,11 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom'
+
 import Navbar from './components/partials/Navbar'
 
 import Home from './pages/Home';
-
-import CartView from './components/CartView';
-import ProductView from './components/ProductView';
+import Login from './pages/Login';
+import FourOFour from './pages/FourOFour';
 
 import 'antd/dist/antd.css'
 
@@ -18,12 +19,14 @@ function App() {
         }
       `}</style>
 
-      <CartView/>
-      <ProductView/>
-
       <Navbar/>
-      <Home/>
-      {/* <Cart/> */}
+
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route path="" component={FourOFour} />
+      </Switch>
+
     </div>
   );
 }

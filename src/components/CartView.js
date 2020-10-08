@@ -22,7 +22,6 @@ class CartView extends Component {
             <div>
                 <Drawer
                     placement="right"
-                    closable={true}
                     visible={this.props.visible}
                     onClose={this.props.hide}
                     closable={false}

@@ -4,6 +4,9 @@ import { connect } from 'react-redux'
 import ProductCard from '../components/ProductCard'
 // import CategoryCard from '../components/CategoryCard'
 
+import CartView from '../components/CartView';
+import ProductView from '../components/ProductView';
+
 import { Row, Col } from 'antd'
 
 export class Home extends Component {
@@ -11,11 +14,13 @@ export class Home extends Component {
     render() {
         return (
             <div>
+
+                <CartView/>
+                <ProductView/>
                 
                 <style jsx>{`
                     .landing {
                         min-height: 80px;
-                        {/* height: calc(30vh - 200px); */}
                     }
 
                     .masthead {
