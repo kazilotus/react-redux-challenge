@@ -5,11 +5,6 @@ import Navbar from './components/partials/Navbar'
 
 import Routes from './routes/Routes'
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import FourOFour from './pages/FourOFour';
-
-
 import CartView from './components/CartView';
 import ProductView from './components/ProductView';
 

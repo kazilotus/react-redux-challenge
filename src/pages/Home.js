@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import ProductCard from '../components/ProductCard'
-// import CategoryCard from '../components/CategoryCard'
 
 import { Row, Col } from 'antd'
 
