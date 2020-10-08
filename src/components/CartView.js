@@ -7,7 +7,7 @@ import { CloseOutlined } from '@ant-design/icons';
 import { hideCart, updateToCart, removeFromCart } from '../redux/actions/cart'
 
 import '../components/CartView.css'
-import Counter from './Counter'
+// import Counter from './Counter'
 
 class CartView extends Component {
 
