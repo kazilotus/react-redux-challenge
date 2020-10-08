@@ -49,10 +49,10 @@ export class ProductView extends Component {
                             <h4>{product?.name}</h4>
                             <span className="price">${product?.price}</span>
                             <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-                            <Space>
+                            { this.props.user !== 1 && <Space>
                                 <Counter value={ this.state.count } onChange={ this.updateCount } />
                                 <Button size="large" onClick={ () => { this.props.add(product?.id, this.state.count); this.onCancel() } }>Add to Cart</Button>
-                            </Space>
+                            </Space>}
                         </div>
                     </div>
                 </Modal>
@@ -63,7 +63,8 @@ export class ProductView extends Component {
 
 const mapStateToProps = (state) => ({
     selectedProduct: state.common?.product,
-    products: state.products
+    products: state.products,
+    user: state.auth.user
 })
 
 const mapDispatchToProps = dispatch => ({
