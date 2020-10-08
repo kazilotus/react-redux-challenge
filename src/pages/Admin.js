@@ -18,28 +18,33 @@ export class Admin extends Component {
           title: 'Image',
           dataIndex: 'image',
           key: 'image',
+          width: 35,
           render: src => <img src={src} alt="product thumbnail" width="50px"/>
         },
         {
           title: 'Name',
           dataIndex: 'name',
           key: 'name',
+          width: 100,
         render: (name, record) => <a href="##" onClick={() => this.props.showProduct(record.id)}>{name}</a>
         },
         {
           title: 'Price',
           dataIndex: 'price',
           key: 'price',
+          width: 40,
           render: price => `$${price}`
         },
         {
           title: 'Quantity',
           dataIndex: 'quantity',
-          key: 'quantity'
+          key: 'quantity',
+          width: 40,
         },
         {
           title: 'Subtotal',
           key: 'subtotal',
+          width: 40,
           render: (x, record) => `$${record.price*record.quantity}`
         }
     ];
@@ -51,6 +56,8 @@ export class Admin extends Component {
         const columns = this.props.user === 1 ? [ ...this.columns , {
             title: 'Action',
             key: 'action',
+            fixed: 'right',
+            width: 52,
             render: (text, record) => (
               <ButtonGroup>
                   <Button onClick={() => this.props.approve(record.id)}>
@@ -70,7 +77,7 @@ export class Admin extends Component {
         }] : this.columns
 
         return (
-            <section id="admin">
+            <section id="admin" style={{ maxWidth: 1400 }}>
 
                 <Tabs defaultActiveKey="0">
                     {
@@ -87,7 +94,7 @@ export class Admin extends Component {
 
                             return items.length &&
                             <TabPane tab={tab.title} key={i}>
-                                <Table columns={columns} dataSource={data} />
+                                <Table columns={columns} dataSource={data} scroll={{ x: 800 }} sticky/>
                             </TabPane>
 
                         })
