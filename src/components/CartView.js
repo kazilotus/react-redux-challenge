@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Button, Drawer, Empty } from 'antd'
 import { CloseOutlined } from '@ant-design/icons';
 
-import { hideCart, updateToCart, removeFromCart } from '../redux/actions/cart'
+import { hideCart, updateToCart, removeFromCart, checkoutCart } from '../redux/actions/cart'
 
 import '../components/CartView.css'
 // import Counter from './Counter'
@@ -53,7 +53,7 @@ class CartView extends Component {
                                     Total: ${ total.toFixed(2) }
                                 </div>
 
-                                <Button>Checkout</Button>
+                                <Button onClick={ this.props.checkout }>Checkout</Button>
 
                             </React.Fragment>
                             :
@@ -77,7 +77,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = dispatch => ({
     hide: () => dispatch(hideCart()),
     update: (id, quantity) => dispatch(updateToCart(id, quantity)),
-    remove: (id) => dispatch(removeFromCart(id))
+    remove: (id) => dispatch(removeFromCart(id)),
+    checkout: () => dispatch(checkoutCart())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartView)
